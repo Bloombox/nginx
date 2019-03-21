@@ -1,0 +1,27 @@
+[submodule "sslconfig"]
+	path = sslconfig
+	url = git@github.com:bloombox/sslconfig.git
+[submodule "cfzlib"]
+	path = cfzlib
+	url = git@github.com:cloudflare/zlib.git
+	tag = v1.2.8
+[submodule "brotli"]
+	path = modules/brotli
+	url = git@github.com:google/ngx_brotli.git
+[submodule "headers-more"]
+	path = modules/headers-more
+	url = git@github.com:openresty/headers-more-nginx-module.git
+	tag = v0.33
+[submodule "pagespeed"]
+	path = modules/pagespeed
+	url = git@github.com:apache/incubator-pagespeed-ngx.git
+	tag = v1.13.35.2-stable
+[submodule "nginx-ct"]
+	path = modules/nginx-ct
+	url = git@github.com:grahamedgecombe/nginx-ct.git
+[submodule "bssl"]
+	path = boringssl
+	url = https://boringssl.googlesource.com/boringssl
+[submodule "token-binding"]
+	path = modules/nginx-token
+	url = https://github.com/google/ngx_token_binding

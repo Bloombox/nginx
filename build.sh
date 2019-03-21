@@ -1,0 +1,46 @@
+#!/bin/bash
+
+auto/configure \
+--prefix=/usr \
+--with-threads \
+--with-file-aio \
+--with-http_ssl_module \
+--with-http_v2_module \
+--with-http_realip_module \
+--with-http_flv_module \
+--with-http_mp4_module \
+--with-http_gunzip_module \
+--with-http_gzip_static_module \
+--with-http_slice_module \
+--with-http_stub_status_module \
+--without-mail_pop3_module \
+--without-mail_imap_module \
+--without-mail_smtp_module \
+--with-stream \
+--with-stream_ssl_module \
+--with-stream_realip_module \
+--with-stream_ssl_preread_module \
+--with-cc-opt='-O3 -march=native -mtune=native -fstack-protector-strong -Wformat -Werror=format-security -fPIC -Wdate-time -D_FORTIFY_SOURCE=2' \
+--with-pcre \
+--with-pcre-jit \
+--with-libatomic \
+--with-zlib=`pwd`/cfzlib \
+--with-openssl=/home/sam/sources/openssl-1.1.1 \
+--conf-path=/etc/nginx/nginx.conf \
+--modules-path=/usr/lib/nginx/modules \
+--pid-path=/run/nginx.pid \
+--http-client-body-temp-path=/cache/body \
+--http-fastcgi-temp-path=/cache/fcgi \
+--http-proxy-temp-path=/cache/proxy \
+--http-scgi-temp-path=/cache/scgi \
+--http-uwsgi-temp-path=/cache/uwsgi \
+--http-log-path=/logs/nginx/access.log \
+--error-log-path=/logs/nginx/error.log \
+--without-http_uwsgi_module \
+--without-http_fastcgi_module \
+--without-http_scgi_module \
+--without-http_ssi_module \
+--add-module=`pwd`/modules/nginx-ct \
+--add-module=`pwd`/modules/brotli \
+--add-module=`pwd`/modules/headers-more && make && sudo make install
+
